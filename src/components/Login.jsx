@@ -2,9 +2,16 @@ import { useRef, useState } from "react";
 import { BG_URL } from "../utils/constant";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import { getAuth, createUserWithEmailAndPassword ,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/userSlice";
 
 const Login=()=>{
     const [isSignInForm,setSignInForm]=useState(true);
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
     const email=useRef(null);
     const password=useRef(null);
     const name=useRef(null);
@@ -16,11 +23,68 @@ const Login=()=>{
 
     const handleButtonClick=()=>{
         // Form data validation
-       const message= checkValidData(email.current.value,password.current.value,name.current.value);
+       const message= checkValidData(email.current.value,password.current.value);
        setErrorMessage(message);
-       console.log(message);
-        console.log(email.current.value);
-        console.log(password.current.value);
+       
+       if(message===null){
+        // create a new user
+
+        if(!isSignInForm){
+            // Sign up logic
+
+            createUserWithEmailAndPassword(
+                auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        updateProfile(user, {
+          displayName: name.current.value, photoURL: "https://private-avatars.githubusercontent.com/u/130023241?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MzQ1NzE5ODAsIm5iZiI6MTczNDU3MDc4MCwicGF0aCI6Ii91LzEzMDAyMzI0MSJ9.mTdL80TtOh3M5AlTbEm6LZnW4gmAS03ONgjgiG09v2c&v=4"
+        }).then(() => {
+          // Profile updated!
+          // ...
+          const {uid,email,displayName,photoURL} = auth.currentUser;
+          dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
+          navigate("/Browse");
+        }).catch((error) => {
+          // An error occurred
+          // ...
+          setErrorMessage(error.message);
+        });
+        // console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErrorMessage(errorCode+" - "+ errorMessage);
+        // ..
+      });
+
+        }
+        else{
+            // Sign in logic
+
+
+            signInWithEmailAndPassword(
+                auth, email.current.value, password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    navigate("/Browse");
+    console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode+" - " + errorMessage);
+  });
+
+
+        }
+       }
+
+    //    sign in /sign up
     }
 
     return (
