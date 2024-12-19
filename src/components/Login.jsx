@@ -38,7 +38,7 @@ const Login=()=>{
         // Signed up 
         const user = userCredential.user;
         updateProfile(user, {
-          displayName: name.current.value, photoURL: "https://private-avatars.githubusercontent.com/u/130023241?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MzQ1NzE5ODAsIm5iZiI6MTczNDU3MDc4MCwicGF0aCI6Ii91LzEzMDAyMzI0MSJ9.mTdL80TtOh3M5AlTbEm6LZnW4gmAS03ONgjgiG09v2c&v=4"
+          displayName: name.current.value, photoURL: "https://private-avatars.githubusercontent.com/u/130023241?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MzQ1NzQ2ODAsIm5iZiI6MTczNDU3MzQ4MCwicGF0aCI6Ii91LzEzMDAyMzI0MSJ9.c7-d_VDtDlpVUS5q9-wCVmyrAqgRi8BFv6jEC1GyZ0Y&v=4"
         }).then(() => {
           // Profile updated!
           // ...
