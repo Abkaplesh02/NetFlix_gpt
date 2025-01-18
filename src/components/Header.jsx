@@ -25,8 +25,8 @@ const Header=()=>{
             <img className="w-44" src={LOGO} alt="Logo" />
 
             {user && <div className="flex p-2">
-                <img className="w-12 h-12" src={user?.photoURL} alt="userIcon" />
-                <button className=" text-white font-bold" onClick={handleSignOut}>(Sign Out)</button>
+                <img className="w-12 h-12 rounded-full mr-4" src={user?.photoURL} alt="userIcon" />
+                <button className=" text-white font-bold bg-red-600 rounded-xl h-10 px-2 hover:bg-red-800" onClick={handleSignOut}>Sign Out</button>
             </div>}
         </div>
     )
