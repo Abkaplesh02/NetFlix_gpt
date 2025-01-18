@@ -44,7 +44,6 @@ const Login=()=>{
           // ...
           const {uid,email,displayName,photoURL} = auth.currentUser;
           dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-          navigate("/Browse");
         }).catch((error) => {
           // An error occurred
           // ...
@@ -70,8 +69,7 @@ const Login=()=>{
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    navigate("/Browse");
-    console.log(user);
+
     // ...
   })
   .catch((error) => {
@@ -88,10 +86,11 @@ const Login=()=>{
     }
 
     return (
-        <div >
+      <div className="w-[100vw]" >
+        
             <Header/>
-            <div className="absolute">
-            <img src={BG_URL} alt="background" />
+            <div className="  absolute">
+            <img className="" src={BG_URL} alt="background" />
             </div>
 
             <form onSubmit={(e)=>e.preventDefault()} className="p-12 bg-black  absolute w-3/12 my-36 mx-auto right-0 left-0 bg-opacity-80 ">
