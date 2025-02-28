@@ -38,7 +38,7 @@ const Login=()=>{
         // Signed up 
         const user = userCredential.user;
         updateProfile(user, {
-          displayName: name.current.value, photoURL: "https://lh3.googleusercontent.com/a/ACg8ocL8getpX9MBSnhBbcokcsVyDvNwqYJt7MawWL2SZzfuXX_bUVk=s360-c-no"
+          displayName: name.current.value, photoURL: "https://media.licdn.com/dms/image/v2/D5635AQHrizmaQA5_Lw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1706541257165?e=1741089600&v=beta&t=jtRg2yz2lmvWSnoA5NAJVykBmH45ap86Wvvd318zTLw"
         }).then(() => {
           // Profile updated!
           // ...
