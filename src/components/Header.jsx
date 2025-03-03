@@ -62,7 +62,7 @@ const Header=()=>{
                   SUPPORTED_LANGUAGES.map((lang)=>(<option key={lang.identifier} value={lang.identifier} >{lang.name}</option>))
                 }
               </select> }
-            <button className="py-2 px-4 my-2 mx-4 text-white bg-purple-900 rounded-lg" onClick={handleGPTSearchClick}>GPT Search</button>
+            <button className="py-2 px-4 my-2 mx-4 text-white bg-purple-900 rounded-lg" onClick={handleGPTSearchClick}>{!showGptSearch ? "GPT Search" : "Home"}</button>
                 <img className="w-12 h-12 rounded-full mr-4" src={user?.photoURL} alt="userIcon" />
                 <button className=" text-white font-bold bg-red-600 rounded-xl h-10 px-2 hover:bg-red-800" onClick={handleSignOut}>Sign Out</button>
             </div>}

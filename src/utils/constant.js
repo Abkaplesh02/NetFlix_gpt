@@ -18,3 +18,7 @@ export const LOGO =
   export const IMG_CDN="https://image.tmdb.org/t/p/w500";
 
   export const SUPPORTED_LANGUAGES=[{identifier:"en",name:"English"},{identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}];
+
+  export const OPENAI_KEY="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";
+
+  export const SearchApi="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
