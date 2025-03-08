@@ -11,7 +11,7 @@ export const LOGO =
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: "Bearer"+process.env.REACT_APP_TMDB_KEY
+      Authorization: `Bearer "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNTU5ZTc3ZDI0Yzg5ZjQ2YTVmMjc0ZjM5ZTM4ZjgzYiIsIm5iZiI6MTc0MDY1ODc1OC45NTEsInN1YiI6IjY3YzA1ODQ2NzQwYzk1YTM3MWEyNGZlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ptwDITBmV0nSYTjBuTmGo7p3YbIbRcyyPsH6AZhch1w"`
     }
   };
 
@@ -19,6 +19,6 @@ export const LOGO =
 
   export const SUPPORTED_LANGUAGES=[{identifier:"en",name:"English"},{identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}];
 
-  export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;
+  export const OPENAI_KEY="sk-proj-p6oeUwH2ZD0EtADyAdZX88qam1FPvHRLUwXVsEm4UGlMYXYBaLbM7acjcWzKVnlmnUQgIOvn5dT3BlbkFJHn--wEmD3U5ycVpMVHi9zhZP8njKs9aU_mfTHwFNZxFPZZyuDuo1E3spqCQjsFZqvydmBrRJc";
 
   export const SearchApi="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
