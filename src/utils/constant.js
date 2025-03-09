@@ -11,7 +11,8 @@ export const LOGO =
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNTU5ZTc3ZDI0Yzg5ZjQ2YTVmMjc0ZjM5ZTM4ZjgzYiIsIm5iZiI6MTc0MDY1ODc1OC45NTEsInN1YiI6IjY3YzA1ODQ2NzQwYzk1YTM3MWEyNGZlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ptwDITBmV0nSYTjBuTmGo7p3YbIbRcyyPsH6AZhch1w"`
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNTU5ZTc3ZDI0Yzg5ZjQ2YTVmMjc0ZjM5ZTM4ZjgzYiIsIm5iZiI6MTc0MDY1ODc1OC45NTEsInN1YiI6IjY3YzA1ODQ2NzQwYzk1YTM3MWEyNGZlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ptwDITBmV0nSYTjBuTmGo7p3YbIbRcyyPsH6AZhch1w'
+      
     }
   };
 
